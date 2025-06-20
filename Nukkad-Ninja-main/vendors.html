@@ -1,0 +1,144 @@
+<!-- vendors.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nearby Vendors | Nukkad Ninja</title>
+  <link rel="stylesheet" href="assets/css/vendors.css" />
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js"></script>
+
+  <!-- Your Firebase Config -->
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCF3ruScakSs-qpf4NxSiqBQlZtLS6IATA",
+      authDomain: "nukkad-ninja.firebaseapp.com",
+      projectId: "nukkad-ninja",
+      storageBucket: "nukkad-ninja.firebasestorage.app",
+      messagingSenderId: "978499163699",
+      appId: "1:978499163699:web:af3c3549d161076bc3b546",
+      measurementId: "G-ZZBQFCNDCX"
+    };
+    const app = firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore(app);
+    const auth = firebase.auth(app);
+  </script>
+</head>
+<body>
+  <!-- Location Popup -->
+  <div class="popup-overlay hidden" id="location-popup">
+    <div class="popup-box">
+      <p>📍 Allow location access to discover nearby hidden food gems!</p>
+      <button id="enable-location-btn">Enable Location</button>
+    </div>
+  </div>
+
+  <!-- App Header -->
+<header class="vendor-header">
+  <h1 class="app-name">Nukkad Ninja</h1>
+  <a href="login.html">
+    <img src="assets/img/user-avatar.png" alt="User Avatar" class="user-avatar" />
+  </a>
+</header>
+
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" placeholder="Search vendors..." />
+  </div>
+
+  <!-- Vendor List Container -->
+<main class="vendor-list blurred" id="vendor-list">
+
+  <!-- Vendor Card 1 -->
+  <a href="vendor-detail.html" class="vendor-card-link">
+<div class="vendor-card">
+  <!-- Top-left Badge -->
+  <div class="badge-icon">
+    <img src="assets/img/qa.jpg"  alt="Badge" />
+  </div>
+
+  <!-- Main Vendor Image -->
+  <img src="assets/img/vendor1.jpg" alt="Vendor Image" />
+
+  <!-- Vendor Info -->
+  <div class="vendor-info">
+    <h3>Sahu Ji Chaat Stall</h3>
+    <p>⭐ 4.5 • Best under ₹100</p>
+    <p>10 AM – 9 PM • Hygienic Certified</p>
+    <p>📍 350m away</p>
+  </div>
+
+  <!-- Bottom-left Food Type Icon -->
+  <div class="food-icon">
+    <img src="assets/img/veg.png" alt="Veg" />
+  </div>
+</div>
+
+
+    </div>
+  </a>
+
+  <!-- Repeat for other vendor cards -->
+  <div class="vendor-card">
+    <div class="badge-icon">
+      <img src="assets/img/qa.jpg" alt="Badge" />
+    </div>
+    <img src="assets/img/vendor2.jpg" alt="Vendor Image" />
+    <div class="vendor-info">
+      <h3>Dahi Bhalle wale</h3>
+      <p>⭐ 4.8 • Best under ₹70</p>
+      <p>12 PM – 11 PM • Authentic Dahi Bhalle</p>
+      <p>📍 1.1 km away</p>
+    </div>
+  </div>
+
+  <div class="vendor-card">
+    <div class="badge-icon">
+      <!-- <img src="assets/img/hygiene-badge.png" alt="Badge" /> -->
+    </div>
+    <img src="assets/img/vendor3.jpg" alt="Vendor Image" />
+    <div class="vendor-info">
+      <h3>Poha Jalebi Bhander</h3>
+      <p>⭐ 4.6 • Best under ₹80</p>
+      <p>9 AM – 8 PM • Sweet & salty</p>
+      <p>📍 750m away</p>
+    </div>
+  </div>
+
+  <div class="vendor-card">
+    <div class="badge-icon">
+      <!-- <img src="assets/img/hygiene-badge.png" alt="Badge" /> -->
+    </div>
+    <img src="assets/img/vendor4.jpg" alt="Vendor Image" />
+    <div class="vendor-info">
+      <h3>Tunday Kababi</h3>
+      <p>⭐ 4.4 • Best Non-veg</p>
+      <p>1 PM – 10 PM • Halal Certified</p>
+      <p>📍 1.6 km away</p>
+    </div>
+  </div>
+
+  <div class="vendor-card">
+    <div class="badge-icon">
+      <!-- <img src="assets/img/hygiene-badge.png" alt="Badge" /> -->
+    </div>
+    <img src="assets/img/vendor5.jpg" alt="Vendor Image" />
+    <div class="vendor-info">
+      <h3>Baba Veg Corner</h3>
+      <p>⭐ 4.3 • Best under ₹60</p>
+      <p>3 PM – 10 PM • Tangy and spicy</p>
+      <p>📍 980m away</p>
+    </div>
+  </div>
+</main>
+
+
+
+
+  <script src="assets/js/vendors.js"></script>
+</body>
+</html>

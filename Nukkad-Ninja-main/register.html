@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vendor Registration | Nukkad Ninja</title>
+  <link rel="stylesheet" href="assets/css/register.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js"></script>
+
+  
+<!-- Firebase Config & Initialization -->
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyCF3ruScakSs-qpf4NxSiqBQlZtLS6IATA",
+  authDomain: "nukkad-ninja.firebaseapp.com",
+  projectId: "nukkad-ninja",
+  storageBucket: "nukkad-ninja.firebasestorage.app",
+  messagingSenderId: "978499163699",
+  appId: "1:978499163699:web:af3c3549d161076bc3b546",
+  measurementId: "G-ZZBQFCNDCX"
+};
+
+  const app = firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+  const auth = firebase.auth();
+  const storage = firebase.storage();
+</script>
+</head>
+<body>
+
+  <div class="form-container">
+    <h1>Register Your Stall</h1>
+
+    <form id="vendor-form">
+      <input type="text" id="vendor-name" placeholder="Stall Name" required />
+      <input type="tel" id="vendor-phone" placeholder="Phone Number" required />
+
+      <!-- Food Type -->
+      <label for="food-type">Food Type:</label>
+      <select id="food-type" required>
+        <option value="">Select</option>
+        <option value="veg">Veg</option>
+        <option value="nonveg">Non-Veg</option>
+        <option value="both">Both</option>
+      </select>
+
+      <!-- Timings -->
+      <label>Opening Time:</label>
+      <input type="time" id="open-time" required />
+      <label>Closing Time:</label>
+      <input type="time" id="close-time" required />
+
+      <!-- Location -->
+      <input type="text" id="manual-location" placeholder="Enter your address or area" required />
+
+      <button type="button" id="get-location-btn">📍Current Location</button>
+      <p id="location-status" style="font-size: 14px; color: #1e7f4b;"></p>
+
+
+      <!-- Menu -->
+      <label for="menu">Menu Items:</label>
+      <div id="menu-items">
+        <div class="menu-row">
+          <input type="text" placeholder="Item Name" class="menu-name" required />
+          <input type="number" placeholder="Price ₹" class="menu-price" required />
+        </div>
+      </div>
+      <button type="button" id="add-item">➕ Add Item</button>
+
+      <!-- Image Upload -->
+      <label>Upload Stall Photo:</label>
+      <input type="file" id="stall-image" accept="image/*" required />
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script src="assets/js/vendor-register.js"></script>
+</body>
+</html>
